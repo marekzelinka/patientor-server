@@ -1,0 +1,2 @@
+### Get non sensitive patient list
+GET http://localhost:3001/api/patients
