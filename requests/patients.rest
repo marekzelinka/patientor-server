@@ -1,2 +1,26 @@
 ### Get non sensitive patient list
 GET http://localhost:3001/api/patients
+
+### Add a new patient with valid data
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+  "name": "Martin Riggs",
+  "dateOfBirth": "1979-01-30",
+  "ssn": "300179-77A",
+  "gender": "male",
+  "occupation": "Cop"
+}
+
+### Fail to add a new patient with invalid data
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+  "name": "Martin Riggs",
+  "dateOfBirth": "1979-01-30",
+  "ssn": "300179-77A",
+  "gender": "male",
+  "occupation": "Cop"
+}

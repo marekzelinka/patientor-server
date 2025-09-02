@@ -1,3 +1,6 @@
+import { toNewPatient } from "../lib/patient.ts";
+import type { Patient } from "../types.ts";
+
 export const patients = [
 	{
 		id: "d2773336-f723-11e9-8f0b-362b9e155667",
@@ -39,4 +42,9 @@ export const patients = [
 		gender: "male",
 		occupation: "Digital evangelist",
 	},
-];
+].map((object) => {
+	const newPatient = toNewPatient(object) as Patient;
+	newPatient.id = object.id;
+
+	return newPatient;
+});
